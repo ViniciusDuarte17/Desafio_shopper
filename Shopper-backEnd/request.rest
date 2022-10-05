@@ -1,0 +1,12 @@
+GET http://localhost:3003
+
+
+###
+POST http://localhost:3003
+Content-Type: application/json 
+
+{
+    "name": "",
+    "deliveryDate": "",
+    "ShoppingList": ""
+}
