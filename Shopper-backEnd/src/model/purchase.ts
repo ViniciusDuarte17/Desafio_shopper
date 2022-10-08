@@ -14,3 +14,11 @@ export interface IPurchaseDTO {
     total_price: number
 }
 
+export interface InewICard  {
+    id: number,
+    name: string,
+    price: number,
+    qty_stock: number,
+    amout: number
+}
+

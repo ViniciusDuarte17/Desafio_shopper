@@ -18,4 +18,32 @@ export class ProductDatabase extends BaseDatabase implements IProductRepository 
             throw new CustomError(error.sqlMessage, error.statusCode || error.message);
         }
     }
+
+
+    async getdProductById(id: string): Promise<IProductDb> {
+        try {
+            const product: IProductDb[] = await this.getConnection()
+                .select("*")
+                .from(ProductDatabase.TABLE_NAME)
+                .where({ id })
+            return product[0]
+        } catch (error: any) {
+            throw new CustomError(error.sqlMessage, error.statusCode || error.message);
+        }
+    }
+
+
+    async updateStockProduct(id: number, newValueStock: number): Promise<void> {
+        try {
+            await this.getConnection()
+                .where({ id })
+                .update({
+                    qty_stock: newValueStock
+                })
+                .from(ProductDatabase.TABLE_NAME)
+
+        } catch (error: any) {
+            throw new CustomError(error.sqlMessage, error.statusCode || error.message);
+        }
+    }
 }

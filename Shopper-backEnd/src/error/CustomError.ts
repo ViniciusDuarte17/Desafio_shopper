@@ -24,7 +24,7 @@ export class InvalidSinup extends CustomError {
 
 export class Unauthorized extends CustomError {
     constructor() {
-        super("Usuário não encontrado", 401)
+        super("token expirado!", 401)
     }
 }
 export class DateInvalid extends CustomError {
