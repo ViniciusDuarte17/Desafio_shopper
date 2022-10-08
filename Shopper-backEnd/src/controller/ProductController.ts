@@ -4,7 +4,7 @@ import { CustomError } from "../error/CustomError";
 
 
 export class ProductController {
-    constructor( private productBusiness: ProductBusiness ) {}
+    constructor(private productBusiness: ProductBusiness) { }
 
     async getProduct(req: Request, res: Response): Promise<void> {
         try {
@@ -12,10 +12,10 @@ export class ProductController {
 
             const product = await this.productBusiness.getProduct(token)
 
-            res.status(200).send({product: product})
+            res.status(200).send({ product: product })
 
         } catch (error) {
-            if(error instanceof CustomError ) {
+            if (error instanceof CustomError) {
                 res.send(error.message).status(400)
             }
         }

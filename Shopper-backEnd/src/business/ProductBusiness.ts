@@ -19,7 +19,6 @@ export class ProductBusiness {
 
             const authorClient = this.authenticator.getTokenData(token)
 
-
             if (!authorClient.id) {
                 throw new ClientNotFound()
             }

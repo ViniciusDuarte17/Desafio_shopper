@@ -1,6 +1,7 @@
 import { ClientNotFound, CustomError, InvalidToken } from "../error/CustomError";
-import { IPurchase, IPurchaseDTO } from "../model/purchase";
+import { InewICard, IPurchase, IPurchaseDTO } from "../model/purchase";
 import { IAuthenticator, IIDGenerator } from "../ports/Ports";
+import { IProductRepository } from "../repository/productDatabaseRepository";
 import { IPurchaseDatabase } from "../repository/purchaseDatabaseRepository";
 
 
@@ -9,7 +10,8 @@ export class PurchaseBusiness {
     constructor(
         private purcahseDatabase: IPurchaseDatabase,
         private idGenerator: IIDGenerator,
-        private authenticator: IAuthenticator
+        private authenticator: IAuthenticator,
+        private productDatabase: IProductRepository
     ) { }
 
     async addPurchase(purchase: IPurchaseDTO, token: string) {
@@ -32,9 +34,15 @@ export class PurchaseBusiness {
                 throw new ClientNotFound()
             }
 
-            const id = this.idGenerator.generate()
+            const id = this.idGenerator.generate();
 
             const cart = JSON.stringify(cart_items);
+
+            const newCartJson: InewICard[] = JSON.parse(cart);
+
+            newCartJson.forEach((product: InewICard) => {
+                this.productDatabase.updateStockProduct(product?.id, (product.qty_stock - product.amout))
+            })
 
             const insertPurchase: IPurchase = {
                 id: id,
