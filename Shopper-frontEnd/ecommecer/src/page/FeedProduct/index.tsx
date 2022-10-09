@@ -5,9 +5,11 @@ import * as Styled from './styled';
 import Button from '@mui/material/Button';
 import { goToCart } from "../../router/coordinator";
 import { useNavigate } from "react-router-dom";
+import { useProtectedPage } from "../../hooks/useProtectedPage";
 
 
 export const FeedProduct: React.FC = () => {
+    useProtectedPage()
     const navigate = useNavigate()
     return (
         <Styled.ContainerFeedProduct>

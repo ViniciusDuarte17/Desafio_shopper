@@ -3,8 +3,10 @@ import { Hearder } from "../../components/Header";
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
 import { goToBack } from "../../router/coordinator";
+import { useProtectedPage } from "../../hooks/useProtectedPage";
 
 export const CartProduct: React.FC = () => {
+    useProtectedPage()
     const navigate = useNavigate()
     return (
         <>
