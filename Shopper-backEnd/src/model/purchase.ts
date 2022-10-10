@@ -1,6 +1,4 @@
 
-
-
 export interface IPurchase {
     id: string,
     id_client: string,

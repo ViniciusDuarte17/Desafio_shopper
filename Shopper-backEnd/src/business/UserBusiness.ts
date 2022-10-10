@@ -26,8 +26,8 @@ export class UserBusiness {
         if (validadeClient[0]) {
             throw new CustomError("Usuário já existe", 401)
         }
-
-        const newformDate = moment(deliveryDate, "DD/MM/YYYY").format(
+        
+        const newformDate = moment(deliveryDate, "YYYY-MM-DD").format(
             "DD-MM-YYYY"
         );
 

@@ -33,13 +33,13 @@ export class UserController {
         try {
             const nameClient = req.body.userName as string
 
-            const token = await this.userBusiness.login(nameClient)
+            const token = await this.userBusiness.login(nameClient);
 
-            res.send({ message: 'Cliente logado, boas compras.', token: token }).status(200)
+            res.send({ message: 'Cliente logado, boas compras.', token: token }).status(200);
 
         } catch (error) {
             if (error instanceof CustomError) {
-                res.send({ error: error.message }).status(400)
+                res.send({ error: error.message }).status(400);
             }
         }
     }
