@@ -1,4 +1,5 @@
 import React from "react";
+import * as Styled from "./styled";
 import { Hearder } from "../../components/Header";
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
@@ -45,7 +46,7 @@ export const CartProduct: React.FC = (props: any) => {
     }
 
     return (
-        <>
+        <Styled.ContainerCartProduct>
             <Hearder>
                 <Button
                     onClick={() => goToBack(navigate)}
@@ -54,22 +55,22 @@ export const CartProduct: React.FC = (props: any) => {
                 </Button>
             </Hearder>
 
-            <div>
-                {renderProductCart}
+            <Styled.ContentMain>
+                {cart.length > 0 ? renderProductCart : <h3>Carrinho vazio!</h3>}
+            </Styled.ContentMain>
 
-                <h3>Total preço: {priceToPay.toFixed(2)}</h3>
-            </div>
+            <h3>Total preço: {cart.length > 0 ? `R$ ${priceToPay.toFixed(2)},00` : null}
+            </h3>
 
-            <div>
-              
-                <Button
+            <Styled.ContentButtonPurchase>
+                {cart.length > 0 ? <Button
                     variant="contained"
                     color="primary"
                     onClick={FinalizePurchase}
                 >
                     Finalizar compra
-                </Button>
-            </div>
-        </>
+                </Button> : null}
+            </Styled.ContentButtonPurchase>
+        </Styled.ContainerCartProduct>
     )
 }
