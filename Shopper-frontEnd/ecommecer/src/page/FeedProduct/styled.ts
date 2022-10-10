@@ -11,6 +11,6 @@ export const ContainerFeedProduct = styled.div`
 export const ContentMain = styled.main`
     display: flex;
     flex-wrap: wrap;
-    width: 95%;
-    margin-left: 3%;
+    width: 98%;
+    margin-left: 2%;
 `

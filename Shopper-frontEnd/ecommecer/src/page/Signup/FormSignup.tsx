@@ -10,6 +10,7 @@ export const FormSignup: React.FC = () => {
     const { form, onChange, clean } = useForm({ name: "", date: "" });
     const navigate = useNavigate();
 
+
     const onSubmitForm = (event: React.ChangeEvent<HTMLInputElement> | any) => {
         event.preventDefault();
         registerClient({ userName: form.name, deliveryDate: form.date }, navigate, clean)

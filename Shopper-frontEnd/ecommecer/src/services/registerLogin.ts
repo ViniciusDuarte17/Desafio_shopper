@@ -6,7 +6,6 @@ import { goToFeed } from "../router/coordinator"
 
 export const registerLogin = (body: any, navigate: NavigateFunction, clear: { (): void; (): void }) => {
 
-
     axios
         .post("http://localhost:3003/user/login", body)
         .then((res) => {

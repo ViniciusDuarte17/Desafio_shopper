@@ -1,4 +1,4 @@
-import  { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,7 +10,7 @@ interface HearderChildreen {
   children: ReactNode
 }
 
-export const Hearder = ({children}: HearderChildreen) =>  {
+export const Hearder = ({ children }: HearderChildreen) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
