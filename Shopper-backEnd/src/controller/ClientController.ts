@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
-import { UserBusiness } from "../business/UserBusiness";
+import { ClientBusiness } from "../business/ClientBusiness";
 import { BaseDatabase } from "../data/BaseDatabase";
 import { CustomError } from "../error/CustomError";
 import { IClientDTO } from "../model/client";
 
 
-export class UserController {
+export class ClientController {
 
-    constructor(private userBusiness: UserBusiness) { }
+    constructor(private clientBusiness: ClientBusiness) { }
 
     async signup(req: Request, res: Response): Promise<void> {
         try {
@@ -16,7 +16,7 @@ export class UserController {
                 deliveryDate: req.body.deliveryDate
             }
 
-            const token = await this.userBusiness.signup(sinupClient);
+            const token = await this.clientBusiness.signup(sinupClient);
 
             res.send({ message: 'Cliente registrado, boas compras.', token: token }).status(200)
 
@@ -33,7 +33,7 @@ export class UserController {
         try {
             const nameClient = req.body.userName as string
 
-            const token = await this.userBusiness.login(nameClient);
+            const token = await this.clientBusiness.login(nameClient);
 
             res.send({ message: 'Cliente logado, boas compras.', token: token }).status(200);
 

@@ -1,9 +1,9 @@
 import {app} from "./app";
 import { productRouter } from "./router/productRouter";
 import { purchasetRouter } from "./router/purchaseRouter";
-import { userRouter } from "./router/userRouter";
+import { clientRouter } from "./router/clientRouter";
 
 
-app.use("/user", userRouter);
+app.use("/user", clientRouter);
 app.use('/product', productRouter);
 app.use("/purchase", purchasetRouter);

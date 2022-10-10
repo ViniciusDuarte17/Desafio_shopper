@@ -1,12 +1,12 @@
 GET http://localhost:3003/product
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM5ZDA0MmM1LWVhZTktNDQ3YS05MGE3LTE1ZmU3YTIyM2VhZiIsImlhdCI6MTY2NTIzNTAzMSwiZXhwIjoxNjY1MjUzMDMxfQ.6NBR4MW346M5KlFblMimMxACyi9RBPbIlvrzsEYIt7A
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM5ZDA0MmM1LWVhZTktNDQ3YS05MGE3LTE1ZmU3YTIyM2VhZiIsImlhdCI6MTY2NTQ0MTI5MSwiZXhwIjoxNjY1NDU5MjkxfQ.zPpoHXHVsJ6-l7qy-h3Pgc7Xu-K9h-J_gBABLmILkfY
 ###
 
 POST http://localhost:3003/user/signup
 Content-Type: application/json 
 
 {
-    "userName": "amora",
+    "userName": "agnaldo rocha",
     "deliveryDate": "2023-10-11" 
 }
 

@@ -1,12 +1,12 @@
 import { ClientNotFound, CustomError, DateInvalid, InvalidSinup } from "../error/CustomError";
-import { IClient, IClientDB, IClientDTO } from "../model/client";
+import { IClient, IClientDTO } from "../model/client";
 import { IUserDatabaseRepository } from "../repository/userDatabaseRepository";
 import moment from 'moment';
 import { ValidateDate } from "../services/CheckDate";
 import { IAuthenticator, IIDGenerator } from "../ports/Ports";
 
 
-export class UserBusiness {
+export class ClientBusiness {
     constructor(
         private userDatabase: IUserDatabaseRepository,
         private idGenerator: IIDGenerator,
@@ -26,7 +26,7 @@ export class UserBusiness {
         if (validadeClient[0]) {
             throw new CustomError("Usuário já existe", 401)
         }
-        
+
         const newformDate = moment(deliveryDate, "YYYY-MM-DD").format(
             "DD-MM-YYYY"
         );
@@ -56,7 +56,7 @@ export class UserBusiness {
 
     public async login(nameClient: string): Promise<string> {
 
-        if (!nameClient ) {
+        if (!nameClient) {
             throw new InvalidSinup()
         }
 
@@ -67,7 +67,7 @@ export class UserBusiness {
         }
 
         const id = validadeClient[0].id
-      
+
         const token = this.authenticator.generateToken({ id })
 
         return token

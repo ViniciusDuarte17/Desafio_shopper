@@ -1,4 +1,4 @@
-import { UserBusiness } from "../src/business/UserBusiness";
+import { UserBusiness } from "../src/business/ClientBusiness";
 import { IClientDTO } from "../src/model/client";
 import { AuthenticatorMock } from "./business/mock/AuthenticatorMock";
 import { IdGeneratorMock } from "./business/mock/IdGeneratorMock";

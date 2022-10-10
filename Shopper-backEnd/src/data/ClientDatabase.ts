@@ -4,7 +4,7 @@ import { IUserDatabaseRepository } from "../repository/userDatabaseRepository";
 import { BaseDatabase } from "./BaseDatabase";
 
 
-export class UserDatabase extends BaseDatabase implements IUserDatabaseRepository {
+export class ClientDatabase extends BaseDatabase implements IUserDatabaseRepository {
 
     private static TABLE_NAME = 'Client_Shopper'
 
@@ -12,7 +12,7 @@ export class UserDatabase extends BaseDatabase implements IUserDatabaseRepositor
         try {
             const client: IClientDB[] = await this.getConnection()
                 .select("*")
-                .from(UserDatabase.TABLE_NAME)
+                .from(ClientDatabase.TABLE_NAME)
                 .where("user_name", "=", name)
 
             return client
@@ -29,7 +29,7 @@ export class UserDatabase extends BaseDatabase implements IUserDatabaseRepositor
                     id: client.id,
                     user_name: client.userName,
                     deliveryDate: client.deliveryDate
-                }).into(UserDatabase.TABLE_NAME)
+                }).into(ClientDatabase.TABLE_NAME)
 
         } catch (error: any) {
             throw new CustomError(error.sqlMessage, error.statusCode || error.message);
