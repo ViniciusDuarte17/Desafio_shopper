@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 
-
 export const Container = styled.div`
     width: 100%;
     display: flex;
@@ -9,13 +8,24 @@ export const Container = styled.div`
 `
 
 export const ContainerLogin = styled.form`
-    width: 80%;
+    width: 50%;
     margin: auto;
-    margin-top: 5%;
+    margin-top: 10%;
+    padding: 2%;
 `
 
 export const ContentButtonLogin = styled.div`
-        width: 78%;
-        display: flex;
-        margin: auto;   
+    width: 78%;
+    display: flex;
+    margin: auto;   
+`
+
+export const ContentButtonSignup = styled.div`
+    display: flex;
+    justify-content: center;
+`
+
+export const SpanHeaderLogin = styled.span`
+    font-size: 1.3em;
+    font-family: Arial, Helvetica, sans-serif;
 `

@@ -14,3 +14,9 @@ export const ContentMain = styled.main`
     width: 98%;
     margin-left: 2%;
 `
+
+export const ContentLogout = styled.div`
+    display: flex;
+    margin-left: 2%;
+`
+

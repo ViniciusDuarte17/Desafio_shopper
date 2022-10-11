@@ -15,14 +15,16 @@ export const Login: React.FC = () => {
     return (
         <Styled.Container>
             <Hearder>
-                <h3>Login</h3>
+                <Styled.SpanHeaderLogin>Login</Styled.SpanHeaderLogin>
             </Hearder>
             <FormLogin />
-            <Button
-                onClick={() => goToRegister(navigate)}
-            >
-                Não possui cadastro ? Clique aqui.
-            </Button>
+            <Styled.ContentButtonSignup>
+                <Button
+                    onClick={() => goToRegister(navigate)}
+                >
+                    Não possui cadastro ? Clique aqui.
+                </Button>
+            </Styled.ContentButtonSignup>
         </Styled.Container>
     )
 }

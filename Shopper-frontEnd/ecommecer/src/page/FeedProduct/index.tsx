@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import { getProduct } from "../../services/getProduct";
 import { IProduct } from "../../@types/user";
+import { logout } from "../../services/logout";
 
 
 export const FeedProduct: React.FC = (props: any) => {
@@ -15,6 +16,7 @@ export const FeedProduct: React.FC = (props: any) => {
     const navigate = useNavigate()
     const [product, setProduct] = useState([])
     const { cart, setCart } = props
+
 
     const addProductToCart = (newItem: any) => {
         const index = cart.findIndex((i: any) => i.id === newItem.id);
@@ -48,6 +50,13 @@ export const FeedProduct: React.FC = (props: any) => {
                     color="inherit">
                     Carrinho
                 </Button>
+                <Styled.ContentLogout>
+                    <Button 
+                    onClick={() => logout(navigate)}
+                    color="inherit">
+                        Sair
+                    </Button>
+                </Styled.ContentLogout>
             </Hearder>
             <Styled.ContentMain>
                 {renderProduct}

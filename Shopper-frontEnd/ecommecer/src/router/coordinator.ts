@@ -11,10 +11,10 @@ export const goToRegister = (navigate: NavigateFunction) => {
     navigate('/cadastro')
 }
 
-export const goToCart = (navigate : NavigateFunction) => {
+export const goToCart = (navigate: NavigateFunction) => {
     navigate("/carrinho")
 }
 
 export const goToBack = (navigate: NavigateFunction) => {
-    navigate("/")
+    navigate(-1)
 }

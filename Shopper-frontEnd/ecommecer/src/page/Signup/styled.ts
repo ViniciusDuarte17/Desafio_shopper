@@ -15,8 +15,19 @@ export const ContainerFormSinup = styled.form`
 `
 
 export const ContentButton = styled.div`
-        width: 60%;
-        display: flex;
-        margin: auto;   
+     width: 60%;
+     display: flex;
+     margin: auto;   
+`
+
+export const ButtonGoBackLogin = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+`
+
+export const SpanHeaderSignup = styled.span`
+    font-size: 1.3em;
+    font-family: Arial, Helvetica, sans-serif;
 `
 

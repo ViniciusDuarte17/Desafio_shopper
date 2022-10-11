@@ -3,11 +3,13 @@ import * as Styled from "./styled";
 import { Hearder } from "../../components/Header";
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
-import { goToBack } from "../../router/coordinator";
+import { goToFeed } from "../../router/coordinator";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import { ProductToPurchase } from "../../components/ProductToPurchase";
 import { IProductPurchase } from "../../@types/user";
 import { purchaseProduct } from "../../services/purchaseProduct";
+
+
 
 export const CartProduct: React.FC = (props: any) => {
     useProtectedPage()
@@ -49,7 +51,7 @@ export const CartProduct: React.FC = (props: any) => {
         <Styled.ContainerCartProduct>
             <Hearder>
                 <Button
-                    onClick={() => goToBack(navigate)}
+                    onClick={() => goToFeed(navigate)}
                     color="inherit">
                     Home
                 </Button>
