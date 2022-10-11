@@ -14,6 +14,7 @@ export const registerLogin = (body: any, navigate: NavigateFunction, clear: { ()
             const setToken = res.data.message
             setHeader(res.data.token)
             setToken ? window.localStorage.setItem("token", res.data.token) : alert(res.data.error);
+            alert(res.data.message)
             goToFeed(navigate)
             clear()
         })

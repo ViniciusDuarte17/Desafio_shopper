@@ -12,8 +12,10 @@ export const registerClient = (body: any, navigate: NavigateFunction, clear: { (
             const setToken = res.data.message
             setHeader(res.data.token)
             setToken ? window.localStorage.setItem("token", res.data.token) : alert(res.data.error);
-            goToFeed(navigate) 
+            alert(res.data.message)
+            goToFeed(navigate)
             clear()
+            window.location.reload()
         })
         .catch((error) => {
             alert(error)

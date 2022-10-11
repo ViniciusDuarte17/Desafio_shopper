@@ -12,10 +12,10 @@ export const AppRouter = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<FeedProduct cart={cart} setCart={setCart}/>} />
+                <Route path="/" element={<FeedProduct cart={cart} setCart={setCart} />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/cadastro" element={<Signup />} />
-                <Route path="/carrinho" element={<CartProduct cart={cart} setCart={setCart}/>} />
+                <Route path="/carrinho" element={<CartProduct cart={cart} setCart={setCart} />} />
             </Routes>
         </BrowserRouter>
     )
