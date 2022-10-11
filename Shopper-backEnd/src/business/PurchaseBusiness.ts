@@ -41,6 +41,11 @@ export class PurchaseBusiness {
             const newCartJson: InewICard[] = JSON.parse(cart);
 
             newCartJson.forEach((product: InewICard) => {
+
+                if (product.amout > product.qty_stock) {
+                    throw new CustomError("A quantidade solicitada não esteja disponível no estoque.", 422)
+                }
+
                 this.productDatabase.updateStockProduct(product?.id, (product.qty_stock - product.amout))
             })
 

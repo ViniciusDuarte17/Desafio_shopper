@@ -23,9 +23,9 @@ Content-Type: application/json
 
 POST http://localhost:3003/purchase
 Content-Type: application/json 
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM5ZDA0MmM1LWVhZTktNDQ3YS05MGE3LTE1ZmU3YTIyM2VhZiIsImlhdCI6MTY2NTIzNTAzMSwiZXhwIjoxNjY1MjUzMDMxfQ.6NBR4MW346M5KlFblMimMxACyi9RBPbIlvrzsEYIt7A
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM5ZDA0MmM1LWVhZTktNDQ3YS05MGE3LTE1ZmU3YTIyM2VhZiIsImlhdCI6MTY2NTQ5MjA3MCwiZXhwIjoxNjY1NTEwMDcwfQ.P0AP5-RS0BYbdVnuUIEFlQAg-H77dHjhGCQv0SiEQvc
 
 {
-"cartItems": [{ "id": 16, "name": "AZEITE  PORTUGUÊS EXTRA VIRGEM GALLO 500ML", "price": 20.49, "qty_stock": 156, "amout": 2 }, { "id": 18, "name": "BEBIDA ENERGÉTICA VIBE 2L", "price": 8.99, "qty_stock": 658, "amout": 1 }],
+"cartItems": [{ "id": 16, "name": "AZEITE  PORTUGUÊS EXTRA VIRGEM GALLO 500ML", "price": 20.49, "qty_stock": 156, "amout": 157 }, { "id": 18, "name": "BEBIDA ENERGÉTICA VIBE 2L", "price": 8.99, "qty_stock": 658, "amout": 659 }],
     "price": 100
 }

@@ -18,7 +18,7 @@ export class ClientController {
 
             const token = await this.clientBusiness.signup(sinupClient);
 
-            res.send({ message: 'Cliente registrado, boas compras.', token: token }).status(200)
+            res.send({ message: `Seja bem-vindo(a), ${sinupClient.userName}. Boas compras.`, token: token }).status(200)
 
         } catch (error: any) {
 
@@ -35,7 +35,7 @@ export class ClientController {
 
             const token = await this.clientBusiness.login(nameClient);
 
-            res.send({ message: 'Cliente logado, boas compras.', token: token }).status(200);
+            res.send({ message: `Boas compras ${nameClient}.`, token: token }).status(200);
 
         } catch (error) {
             if (error instanceof CustomError) {
