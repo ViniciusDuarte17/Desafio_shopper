@@ -12,7 +12,7 @@ import { logout } from "../../services/logout";
 import { Loading } from "../../components/Loading";
 
 
-export const FeedProduct: React.FC = (props: any) => {
+export const FeedProduct = (props: any) => {
     useProtectedPage()
     const navigate = useNavigate()
     const [product, setProduct] = useState([])

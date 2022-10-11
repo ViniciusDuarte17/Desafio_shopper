@@ -1,4 +1,3 @@
-import React from "react";
 import * as Styled from "./styled";
 import { Hearder } from "../../components/Header";
 import Button from '@mui/material/Button';
@@ -11,7 +10,7 @@ import { purchaseProduct } from "../../services/purchaseProduct";
 
 
 
-export const CartProduct: React.FC = (props: any) => {
+export const CartProduct = (props: any) => {
     useProtectedPage()
     const navigate = useNavigate()
     const { cart, setCart } = props
