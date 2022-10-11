@@ -1,10 +1,11 @@
 import axios from "axios"
 import { headers } from "../components/token"
+import { BASE_URL } from "../constants/BASE_URL"
 
 
 export const purchaseProduct = (body: any) => {
     axios
-        .post("http://localhost:3003/purchase", body, headers as any)
+        .post(`${BASE_URL}/purchase`, body, headers as any)
         .then((res) => {
             alert(res.data.message)
         })
