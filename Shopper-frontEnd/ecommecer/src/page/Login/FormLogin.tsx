@@ -1,18 +1,24 @@
 import { Button, TextField } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import {CircularProgress} from "@mui/material";
 import { useForm } from "../../hooks/useForm";
 import { registerLogin } from "../../services/registerLogin";
 import * as Styled from "./styled";
 
 
+
 export const FormLogin: React.FC = () => {
-    const { form, onChange, clean } = useForm({ name: "", date: "" });
     const navigate = useNavigate()
+    const { form, onChange, clean } = useForm({ name: "", date: "" });
+    const [isLoading, setIsLoading] = React.useState<boolean>(false);
+
+
 
     const onSubmitForm = (event: React.ChangeEvent<HTMLInputElement> | any) => {
         event.preventDefault();
-        registerLogin({userName: form.name}, navigate, clean)
+        setIsLoading(true)
+        registerLogin({ userName: form.name }, navigate, clean)
     };
 
     return (
@@ -35,11 +41,17 @@ export const FormLogin: React.FC = () => {
                         fullWidth
                         type="submit"
                         variant="contained"
-                        size='medium'>
-                        Login
+                        size='medium'
+                    >
+                        {isLoading ? (
+                            <CircularProgress  color={"inherit"} size={24} />
+                        ) : (
+                            <>Login</>
+                        )}
                     </Button>
                 </Styled.ContentButtonLogin>
             </Styled.ContainerLogin>
         </div>
     )
 }
+

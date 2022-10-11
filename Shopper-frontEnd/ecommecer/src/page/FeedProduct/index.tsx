@@ -9,6 +9,7 @@ import { useProtectedPage } from "../../hooks/useProtectedPage";
 import { getProduct } from "../../services/getProduct";
 import { IProduct } from "../../@types/user";
 import { logout } from "../../services/logout";
+import { Loading } from "../../components/Loading";
 
 
 export const FeedProduct: React.FC = (props: any) => {
@@ -51,15 +52,15 @@ export const FeedProduct: React.FC = (props: any) => {
                     Carrinho
                 </Button>
                 <Styled.ContentLogout>
-                    <Button 
-                    onClick={() => logout(navigate)}
-                    color="inherit">
+                    <Button
+                        onClick={() => logout(navigate)}
+                        color="inherit">
                         Sair
                     </Button>
                 </Styled.ContentLogout>
             </Hearder>
             <Styled.ContentMain>
-                {renderProduct}
+                {product.length > 0 ? renderProduct : <Loading />}
             </Styled.ContentMain>
         </Styled.ContainerFeedProduct>
     )

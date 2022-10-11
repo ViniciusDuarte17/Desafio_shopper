@@ -61,7 +61,8 @@ export const CartProduct: React.FC = (props: any) => {
                 {cart.length > 0 ? renderProductCart : <h3>Carrinho vazio!</h3>}
             </Styled.ContentMain>
 
-            <h3>Total preço: {cart.length > 0 ? `R$ ${priceToPay.toFixed(2)},00` : null}
+            <h3>
+                {cart.length > 0 ? `Preço total: R$ ${priceToPay.toFixed(2)},00` : null}
             </h3>
 
             <Styled.ContentButtonPurchase>

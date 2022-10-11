@@ -1,18 +1,21 @@
 import { Button, TextField } from "@mui/material";
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { registerClient } from "../../services/registerClient";
 import * as Styled from "./styled";
+import { CircularProgress } from "@mui/material";
 
 
 export const FormSignup: React.FC = () => {
-    const { form, onChange, clean } = useForm({ name: "", date: "" });
     const navigate = useNavigate();
+    const { form, onChange, clean } = useForm({ name: "", date: "" });
+    const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
 
     const onSubmitForm = (event: React.ChangeEvent<HTMLInputElement> | any) => {
         event.preventDefault();
+        setIsLoading(true)
         registerClient({ userName: form.name, deliveryDate: form.date }, navigate, clean)
     };
 
@@ -48,7 +51,11 @@ export const FormSignup: React.FC = () => {
                         type="submit"
                         variant="contained"
                         size='medium'>
-                        Cadastrar
+                        {isLoading ? (
+                            <CircularProgress color={"inherit"} size={24} />
+                        ) : (
+                            <>Cadastrar</>
+                        )}
                     </Button>
                 </Styled.ContentButton>
             </Styled.ContainerFormSinup>
