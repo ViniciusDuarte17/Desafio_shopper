@@ -21,6 +21,7 @@
         "@types/jsonwebtoken": "^8.5.0",
         "@types/knex": "^0.16.1",
         "@types/uuid": "^8.0.0",
+        "@types/cors": "^2.8.12",
         "bcryptjs": "^2.4.3",
         "cors": "^2.8.5",
         "dotenv": "^8.2.0",
@@ -34,8 +35,5 @@
         "ts-node-dev": "^1.0.0-pre.63",
         "typescript": "^4.0.3",
         "uuid": "^8.2.0"
-    },
-    "devDependencies": {
-        "@types/cors": "^2.8.12"
     }
 }

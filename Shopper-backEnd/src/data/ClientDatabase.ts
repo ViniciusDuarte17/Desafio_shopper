@@ -1,10 +1,10 @@
 import { CustomError } from "../error/CustomError";
 import { IClient, IClientDB } from "../model/client";
-import { IUserDatabaseRepository } from "../repository/userDatabaseRepository";
+import { IClientDatabaseRepository } from "../repository/ClientDatabaseRepository";
 import { BaseDatabase } from "./BaseDatabase";
 
 
-export class ClientDatabase extends BaseDatabase implements IUserDatabaseRepository {
+export class ClientDatabase extends BaseDatabase implements IClientDatabaseRepository {
 
     private static TABLE_NAME = 'Client_Shopper'
 

@@ -1,6 +1,6 @@
 import { ClientNotFound, CustomError, DateInvalid, InvalidSinup } from "../error/CustomError";
 import { IClient, IClientDTO } from "../model/client";
-import { IUserDatabaseRepository } from "../repository/userDatabaseRepository";
+import { IClientDatabaseRepository } from "../repository/ClientDatabaseRepository";
 import moment from 'moment';
 import { ValidateDate } from "../services/CheckDate";
 import { IAuthenticator, IIDGenerator } from "../ports/Ports";
@@ -8,7 +8,7 @@ import { IAuthenticator, IIDGenerator } from "../ports/Ports";
 
 export class ClientBusiness {
     constructor(
-        private userDatabase: IUserDatabaseRepository,
+        private clientDatabase: IClientDatabaseRepository,
         private idGenerator: IIDGenerator,
         private authenticator: IAuthenticator
     ) { }
@@ -21,7 +21,7 @@ export class ClientBusiness {
             throw new InvalidSinup()
         }
 
-        const validadeClient = await this.userDatabase.getClient(userName)
+        const validadeClient = await this.clientDatabase.getClient(userName)
 
         if (validadeClient[0]) {
             throw new CustomError("Usuário já existe", 401)
@@ -47,7 +47,7 @@ export class ClientBusiness {
             deliveryDate: dataValida
         }
 
-        await this.userDatabase.signupClient(user)
+        await this.clientDatabase.signupClient(user)
 
         const accessToken = this.authenticator.generateToken({ id })
 
@@ -60,7 +60,7 @@ export class ClientBusiness {
             throw new InvalidSinup()
         }
 
-        const validadeClient = await this.userDatabase.getClient(nameClient)
+        const validadeClient = await this.clientDatabase.getClient(nameClient)
 
         if (!validadeClient[0]) {
             throw new ClientNotFound()

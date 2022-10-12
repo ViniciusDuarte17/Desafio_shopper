@@ -1,12 +1,11 @@
-GET http://localhost:3003/product
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM5ZDA0MmM1LWVhZTktNDQ3YS05MGE3LTE1ZmU3YTIyM2VhZiIsImlhdCI6MTY2NTQ0MTI5MSwiZXhwIjoxNjY1NDU5MjkxfQ.zPpoHXHVsJ6-l7qy-h3Pgc7Xu-K9h-J_gBABLmILkfY
-###
+GET https://shopper-connection.herokuapp.com/product
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM5ZDA0MmM1LWVhZTktNDQ3YS05MGE3LTE1ZmU3YTIyM2VhZiIsImlhdCI6MTY2NTU4MDgyNCwiZXhwIjoxNjY1NTk4ODI0fQ.Jn8LbRWYZvy0wTMT3bZXSvxHPY0zxMPlHgE-NjB0TN0
 
 POST http://localhost:3003/user/signup
 Content-Type: application/json 
 
 {
-    "userName": "agnaldo rocha",
+    "userName": "agnaldo rocha test",
     "deliveryDate": "2023-10-11" 
 }
 
