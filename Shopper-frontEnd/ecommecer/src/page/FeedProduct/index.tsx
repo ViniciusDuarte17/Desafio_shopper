@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { CardProduct } from "../../components/CardProduct";
 import { Hearder } from "../../components/Header";
 import * as Styled from './styled';
@@ -10,7 +10,8 @@ import { getProduct } from "../../services/getProduct";
 import { IProduct } from "../../@types/user";
 import { logout } from "../../services/logout";
 import { Loading } from "../../components/Loading";
-
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 export const FeedProduct = (props: any) => {
     useProtectedPage()
@@ -49,13 +50,13 @@ export const FeedProduct = (props: any) => {
                 <Button
                     onClick={() => goToCart(navigate)}
                     color="inherit">
-                    Carrinho
+                   <AddShoppingCartIcon fontSize="medium"/>
                 </Button>
                 <Styled.ContentLogout>
                     <Button
                         onClick={() => logout(navigate)}
                         color="inherit">
-                        Sair
+                        Sair <LogoutIcon fontSize="small"/>
                     </Button>
                 </Styled.ContentLogout>
             </Hearder>

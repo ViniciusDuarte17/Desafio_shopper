@@ -1,6 +1,6 @@
 import * as Styled from './styled';
 import Button from "@mui/material/Button";
-
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
 export const ProductToPurchase = (props: any) => {
 
@@ -16,7 +16,7 @@ export const ProductToPurchase = (props: any) => {
                         color="primary"
                         onClick={() => props.removeProductToCart(props.product)}
                     >
-                       Remover item
+                     Remover item   <RemoveCircleOutlineIcon />
                     </Button>
                 </Styled.DivButton>
             </Styled.Content>

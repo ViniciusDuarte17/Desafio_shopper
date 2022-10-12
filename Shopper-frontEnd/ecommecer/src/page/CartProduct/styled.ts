@@ -24,7 +24,7 @@ export const ContentMain = styled.main`
 
 export const ContentButtonPurchase = styled.div`
     display: flex;
-    margin-left: 8%;
+    margin-left: 6%;
     margin-bottom: 2%;
     margin-top: 1%;
 `

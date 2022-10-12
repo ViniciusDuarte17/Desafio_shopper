@@ -1,6 +1,6 @@
 import * as Styled from './styled';
 import Button from "@mui/material/Button";
-
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 export const CardProduct = (props: any) => {
 
@@ -16,7 +16,7 @@ export const CardProduct = (props: any) => {
                         color="primary"
                         onClick={() => props.addProductToCart(props.product)}
                     >
-                        add produto
+                        add produto  <AddCircleOutlineIcon />
                     </Button>
                 </Styled.DivButton>
             </Styled.Content>
