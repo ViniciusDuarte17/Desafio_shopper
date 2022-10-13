@@ -60,10 +60,10 @@ Ferramentas usadas na construção do projeto:
 
 
  ### LINKS:
+ 
+ * [Shopper front-end](https://dynamic-treacle-61ca72.netlify.app/)
 
 * [Documentação do post](https://documenter.getpostman.com/view/19713876/2s83zpL1WR)
-
-* [Shopper front-end](https://dynamic-treacle-61ca72.netlify.app/)
 
 ```
 BASE_URL DO BACK-END: https://shopper-connection.herokuapp.com
