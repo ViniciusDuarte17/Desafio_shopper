@@ -27,4 +27,7 @@ export const ContentButtonPurchase = styled.div`
     margin-left: 6%;
     margin-bottom: 2%;
     margin-top: 1%;
+    @media  screen and (min-width: 270px) and (max-width: 600px) {
+       width: 22em;
+ }
 `

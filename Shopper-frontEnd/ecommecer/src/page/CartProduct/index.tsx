@@ -74,7 +74,7 @@ export const CartProduct = (props: any) => {
 
             <Styled.ContentButtonPurchase>
                 {cart.length > 0 ?
-                    <Box sx={{ width: '40%' }}>
+                    <Box sx={{ width: '60%' }}>
                         <Collapse in={open}>
                             <Alert
                                 action={

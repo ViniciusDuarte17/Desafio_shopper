@@ -15,7 +15,7 @@ export const ContainerLogin = styled.form`
 `
 
 export const ContentButtonLogin = styled.div`
-    width: 78%;
+    width: 100%;
     display: flex;
     margin: auto;   
 `
