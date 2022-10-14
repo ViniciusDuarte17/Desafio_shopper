@@ -1,5 +1,5 @@
 import { ClientNotFound, CustomError, InvalidToken } from "../error/CustomError";
-import { InewICard, IPurchase, IPurchaseDTO } from "../model/purchase";
+import { InewCart, IPurchase, IPurchaseDTO } from "../model/purchase";
 import { IAuthenticator, IIDGenerator } from "../ports/Ports";
 import { IProductRepository } from "../repository/productDatabaseRepository";
 import { IPurchaseDatabase } from "../repository/purchaseDatabaseRepository";
@@ -38,9 +38,9 @@ export class PurchaseBusiness {
 
             const cart = JSON.stringify(cart_items);
 
-            const newCartJson: InewICard[] = JSON.parse(cart);
+            const newCartJson: InewCart[] = JSON.parse(cart);
 
-            newCartJson.forEach((product: InewICard) => {
+            newCartJson.forEach((product: InewCart) => {
 
                 if (product.amout > product.qty_stock) {
                     throw new CustomError("A quantidade solicitada não esteja disponível no estoque.", 422)

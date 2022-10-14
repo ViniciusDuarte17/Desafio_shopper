@@ -12,7 +12,7 @@ export interface IPurchaseDTO {
     total_price: number
 }
 
-export interface InewICard  {
+export interface InewCart  {
     id: number,
     name: string,
     price: number,
