@@ -39,7 +39,7 @@ export class ClientBusiness {
 
         const id = this.idGenerator.generate()
 
-        const dataValida = moment(deliveryDate, "DD-MM-YYYY").format("YYYY-MM-DD")
+        const dataValida = moment(newformDate, "DD-MM-YYYY").format("YYYY-MM-DD")
 
         const user: IClient = {
             id,

@@ -7,8 +7,8 @@ POST http://localhost:3003/user/signup
 Content-Type: application/json 
 
 {
-    "userName": "agnaldo rocha test",
-    "deliveryDate": "2023-10-11" 
+    "userName": "benjamin rocha test",
+    "deliveryDate": "2023-10-14" 
 }
 
 ###
