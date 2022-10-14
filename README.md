@@ -69,6 +69,4 @@ Ferramentas usadas na construção do projeto:
 BASE_URL DO BACK-END: https://shopper-connection.herokuapp.com
 ```
 
-## Autor
-
 - [@ViniciusDuarte17](https://github.com/ViniciusDuarte17)
