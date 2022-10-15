@@ -4,8 +4,8 @@ import { secondary} from "../../constants/colors";
 
 export const ContainerToCard = styled.div`
     width: 18em;
-    border: solid 3px ${ secondary };
-    box-shadow: 0 0 18px 2px rgba(0, 0, 0, 0.75);
+    border: solid 1px ${ secondary };
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.23);
     border-radius: 8px;
     transition: 0.2s;
     margin: 5%;

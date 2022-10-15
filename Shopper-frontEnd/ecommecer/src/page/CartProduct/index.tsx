@@ -13,14 +13,16 @@ import Alert from '@mui/material/Alert';
 import IconButton from '@mui/material/IconButton';
 import Collapse from '@mui/material/Collapse';
 import Box from '@mui/material/Box';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { notify } from "../../services/notifyStyled";
 
 
 export const CartProduct = (props: any) => {
     useProtectedPage()
     const navigate = useNavigate()
     const [open, setOpen] = React.useState(true);
-    const { cart, setCart } = props
+    const { cart, setCart } = props;
 
     const removeProductToCart = (itemToRemove: IProductPurchase) => {
         const index = cart.findIndex((i: IProductPurchase) => i.id === itemToRemove.id)
@@ -32,7 +34,6 @@ export const CartProduct = (props: any) => {
         } else {
             newCart[index].amout -= 1
         }
-
         setCart(newCart);
     }
 
@@ -52,6 +53,7 @@ export const CartProduct = (props: any) => {
         const body = { cartItems: cart, price: priceToPay }
         purchaseProduct(body)
         setOpen(false)
+        notify()
     }
 
     return (
@@ -97,12 +99,16 @@ export const CartProduct = (props: any) => {
                         <Button
                             disabled={open}
                             variant="outlined"
+
                             onClick={() => {
+                                setCart([])
                                 setOpen(true);
                             }}
                         >
-                            Adicione mais produtos no carrinho para continuar comprando.
+                            Limpar carrinho
                         </Button>
+
+                        <ToastContainer />
                     </Box>
                     : null
                 }

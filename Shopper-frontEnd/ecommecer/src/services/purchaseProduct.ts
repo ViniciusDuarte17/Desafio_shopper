@@ -7,9 +7,9 @@ export const purchaseProduct = (body: any) => {
     axios
         .post(`${BASE_URL}/purchase`, body, headers as any)
         .then((res) => {
-            alert(res.data.message)
+           // alert(res.data.message)
         })
         .catch((error) => {
-            console.log(error)
+            alert(error)
         })
 }
