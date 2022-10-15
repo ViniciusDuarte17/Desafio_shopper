@@ -23,6 +23,8 @@ export const CartProduct = (props: any) => {
     const navigate = useNavigate()
     const [open, setOpen] = React.useState(true);
     const { cart, setCart } = props;
+    const [message, setMessage] = React.useState('')
+   
 
     const removeProductToCart = (itemToRemove: IProductPurchase) => {
         const index = cart.findIndex((i: IProductPurchase) => i.id === itemToRemove.id)
@@ -51,9 +53,9 @@ export const CartProduct = (props: any) => {
 
     const FinalizePurchase = () => {
         const body = { cartItems: cart, price: priceToPay }
-        purchaseProduct(body)
+        purchaseProduct(body, setMessage)
         setOpen(false)
-        notify()
+        notify(message)
     }
 
     return (
@@ -71,7 +73,7 @@ export const CartProduct = (props: any) => {
             </Styled.ContentMain>
 
             <h3>
-                {cart.length > 0 ? `Preço total: R$ ${priceToPay},00` : null}
+                {cart.length > 0 ? `Preço total: R$ ${priceToPay.toFixed(2)},00` : null}
             </h3>
 
             <Styled.ContentButtonPurchase>
