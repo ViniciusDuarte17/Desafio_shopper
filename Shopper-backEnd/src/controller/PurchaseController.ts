@@ -6,10 +6,10 @@ import { IPurchaseDTO } from "../model/purchase";
 
 
 export class PurchaseController {
-    constructor(private purchaseBusiness: PurchaseBusiness) {  }
+    constructor(private purchaseBusiness: PurchaseBusiness) { }
 
 
-    async insertPurchase (req: Request, res: Response): Promise<void> {
+    async insertPurchase(req: Request, res: Response): Promise<void> {
         try {
             const token = req.headers.authorization as string;
             const purchase: IPurchaseDTO = {
@@ -19,7 +19,7 @@ export class PurchaseController {
 
             await this.purchaseBusiness.addPurchase(purchase, token)
 
-            res.status(201).send({message: 'compra realiza!'})
+            res.status(201).send({ message: 'compra realizada!' })
 
         } catch (error: any) {
             if (error instanceof CustomError) {
