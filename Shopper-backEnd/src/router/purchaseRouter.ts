@@ -17,4 +17,3 @@ const purchaseBusiness = new PurchaseBusiness(purchaseDatabase, idGenerator, aut
 const purchaseController = new PurchaseController(purchaseBusiness)
 
 purchasetRouter.post("/", (res, req) => purchaseController.insertPurchase(res, req));
-
