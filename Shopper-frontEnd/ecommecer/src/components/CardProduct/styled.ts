@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { secondary} from "../../constants/colors";
+import { secondary } from "../../constants/colors";
+
 
 
 export const ContainerToCard = styled.div`

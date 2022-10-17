@@ -12,16 +12,17 @@ import { logout } from "../../services/logout";
 import { Loading } from "../../components/Loading";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { INewPurchase, IProductPurchase } from "../../@types/purchase";
 
-export const FeedProduct = (props: any) => {
+
+export const FeedProduct = ({ cart, setCart }: INewPurchase) => {
     useProtectedPage()
     const navigate = useNavigate()
     const [product, setProduct] = useState([])
-    const { cart, setCart } = props
 
 
-    const addProductToCart = (newItem: any) => {
-        const index = cart.findIndex((i: any) => i.id === newItem.id);
+    const addProductToCart = (newItem: IProductPurchase) => {
+        const index = cart.findIndex((i: IProduct) => i.id === newItem.id);
         const newCart = [...cart]
 
         if (index === -1) {
@@ -40,7 +41,7 @@ export const FeedProduct = (props: any) => {
 
     const renderProduct = product && product.map((product: IProduct) => {
         return (
-            <CardProduct key={product?.id} product={product} addProductToCart={addProductToCart} />
+            <CardProduct key={product.id} product={product} addProductToCart={addProductToCart} />
         )
     })
 
@@ -50,13 +51,13 @@ export const FeedProduct = (props: any) => {
                 <Button
                     onClick={() => goToCart(navigate)}
                     color="inherit">
-                   <AddShoppingCartIcon fontSize="medium"/>
+                    <AddShoppingCartIcon fontSize="medium" />
                 </Button>
                 <Styled.ContentLogout>
                     <Button
                         onClick={() => logout(navigate)}
                         color="inherit">
-                        Sair <LogoutIcon fontSize="small"/>
+                        Sair <LogoutIcon fontSize="small" />
                     </Button>
                 </Styled.ContentLogout>
             </Hearder>

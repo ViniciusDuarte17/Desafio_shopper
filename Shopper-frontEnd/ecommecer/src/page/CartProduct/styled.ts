@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 
+
+
 export const ContainerCartProduct = styled.div`
     display: flex;
     flex-direction: column;
@@ -31,3 +33,4 @@ export const ContentButtonPurchase = styled.div`
        width: 22em;
  }
 `
+

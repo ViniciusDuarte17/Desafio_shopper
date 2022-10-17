@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import { goToFeed } from "../../router/coordinator";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import { ProductToPurchase } from "../../components/ProductToPurchase";
-import { IProductPurchase } from "../../@types/user";
 import { purchaseProduct } from "../../services/purchaseProduct";
 import HomeIcon from '@mui/icons-material/Home';
 import Alert from '@mui/material/Alert';
@@ -16,15 +15,15 @@ import Box from '@mui/material/Box';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { notify } from "../../services/notifyStyled";
+import { INewPurchase, IProductPurchase } from "../../@types/purchase";
 
 
-export const CartProduct = (props: any) => {
+export const CartProduct = ({cart, setCart}: INewPurchase) => {
     useProtectedPage()
     const navigate = useNavigate()
     const [open, setOpen] = React.useState(true);
-    const { cart, setCart } = props;
     const [message, setMessage] = React.useState('')
-   
+
 
     const removeProductToCart = (itemToRemove: IProductPurchase) => {
         const index = cart.findIndex((i: IProductPurchase) => i.id === itemToRemove.id)
