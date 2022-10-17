@@ -41,7 +41,10 @@ export const FeedProduct = ({ cart, setCart }: INewPurchase) => {
 
     const renderProduct = product && product.map((product: IProduct) => {
         return (
-            <CardProduct key={product.id} product={product} addProductToCart={addProductToCart} />
+            <CardProduct key={product.id}
+                product={product}
+                addProductToCart={addProductToCart}
+            />
         )
     })
 

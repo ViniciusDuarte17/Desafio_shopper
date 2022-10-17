@@ -18,7 +18,7 @@ import { notify } from "../../services/notifyStyled";
 import { INewPurchase, IProductPurchase } from "../../@types/purchase";
 
 
-export const CartProduct = ({cart, setCart}: INewPurchase) => {
+export const CartProduct = ({ cart, setCart }: INewPurchase) => {
     useProtectedPage()
     const navigate = useNavigate()
     const [open, setOpen] = React.useState(true);
@@ -40,7 +40,11 @@ export const CartProduct = ({cart, setCart}: INewPurchase) => {
 
     const renderProductCart = cart.map((product: IProductPurchase) => {
         return (
-            <ProductToPurchase key={product.id} product={product} removeProductToCart={removeProductToCart} />
+            <ProductToPurchase
+                key={product.id}
+                product={product}
+                removeProductToCart={removeProductToCart}
+            />
         )
     })
 

@@ -6,8 +6,9 @@ import { Login } from "../page/Login";
 import { useState } from "react";
 
 
+
 export const AppRouter = () => {
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState<any>([])
 
     return (
         <BrowserRouter>
