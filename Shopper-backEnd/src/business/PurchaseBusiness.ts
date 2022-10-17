@@ -46,7 +46,7 @@ export class PurchaseBusiness {
                     throw new CustomError("A quantidade solicitada não esteja disponível no estoque.", 422)
                 }
 
-                this.productDatabase.updateStockProduct(product?.id, (product.qty_stock - product.amout))
+                this.productDatabase.updateStockProduct(product.id, (product.qty_stock - product.amout))
             })
 
             const insertPurchase: IPurchase = {
