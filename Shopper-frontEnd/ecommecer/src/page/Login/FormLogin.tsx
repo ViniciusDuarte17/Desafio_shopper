@@ -1,7 +1,7 @@
 import { Button, TextField } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import {CircularProgress} from "@mui/material";
+import { CircularProgress } from "@mui/material";
 import { useForm } from "../../hooks/useForm";
 import { registerLogin } from "../../services/registerLogin";
 import * as Styled from "./styled";
@@ -10,7 +10,7 @@ import * as Styled from "./styled";
 
 export const FormLogin: React.FC = () => {
     const navigate = useNavigate()
-    const { form, onChange, clean } = useForm({ name: "", date: "" });
+    const { form, onChange, clean } = useForm({ name: "", password: "" });
     const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
 
@@ -18,7 +18,7 @@ export const FormLogin: React.FC = () => {
     const onSubmitForm = (event: React.ChangeEvent<HTMLInputElement> | any) => {
         event.preventDefault();
         setIsLoading(true)
-        registerLogin({ userName: form.name }, navigate, clean)
+        registerLogin({ userName: form.name, password: form.password }, navigate, clean)
     };
 
     return (
@@ -36,6 +36,18 @@ export const FormLogin: React.FC = () => {
                     margin="normal"
                 />
 
+                <TextField
+                    name={"password"}
+                    value={form.password}
+                    onChange={onChange}
+                    label={"senha"}
+                    variant="outlined"
+                    type={"password"}
+                    fullWidth
+                    required
+                    margin="normal"
+                />
+
                 <Styled.ContentButtonLogin>
                     <Button
                         fullWidth
@@ -44,7 +56,7 @@ export const FormLogin: React.FC = () => {
                         size='medium'
                     >
                         {isLoading ? (
-                            <CircularProgress  color={"inherit"} size={24} />
+                            <CircularProgress color={"inherit"} size={24} />
                         ) : (
                             <>Login</>
                         )}

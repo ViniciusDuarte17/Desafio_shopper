@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { secondary } from "../../constants/colors";
 
 
 
@@ -32,5 +33,19 @@ export const ContentButtonPurchase = styled.div`
     @media  screen and (min-width: 270px) and (max-width: 600px) {
        width: 22em;
  }
+`
+
+export const ContentInput = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-left: 8%;
+    margin-bottom: 2%;
+`
+
+export const TextH1 = styled.h3`
+    color: ${secondary};
+    font-family: 'Roboto';
+    font-style: normal;
 `
 

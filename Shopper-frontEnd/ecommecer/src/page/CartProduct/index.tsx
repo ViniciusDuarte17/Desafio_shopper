@@ -1,4 +1,3 @@
-import React from "react";
 import * as Styled from "./styled";
 import { Hearder } from "../../components/Header";
 import Button from '@mui/material/Button';
@@ -8,21 +7,15 @@ import { useProtectedPage } from "../../hooks/useProtectedPage";
 import { ProductToPurchase } from "../../components/ProductToPurchase";
 import { purchaseProduct } from "../../services/purchaseProduct";
 import HomeIcon from '@mui/icons-material/Home';
-import Alert from '@mui/material/Alert';
-import IconButton from '@mui/material/IconButton';
-import Collapse from '@mui/material/Collapse';
-import Box from '@mui/material/Box';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { notify } from "../../services/notifyStyled";
 import { INewPurchase, IProductPurchase } from "../../@types/purchase";
+import { TextField } from "@mui/material";
+import { useForm } from "../../hooks/useForm";
 
 
 export const CartProduct = ({ cart, setCart }: INewPurchase) => {
     useProtectedPage()
     const navigate = useNavigate()
-    const [open, setOpen] = React.useState(true);
-    const [message, setMessage] = React.useState('')
+    const { form, onChange } = useForm({ date: "" });
 
 
     const removeProductToCart = (itemToRemove: IProductPurchase) => {
@@ -55,10 +48,8 @@ export const CartProduct = ({ cart, setCart }: INewPurchase) => {
     })
 
     const FinalizePurchase = () => {
-        const body = { cartItems: cart, price: priceToPay }
-        purchaseProduct(body, setMessage)
-        setOpen(false)
-        notify(message)
+        const body = { cartItems: cart, price: priceToPay, deliveryDate: form.date }
+        purchaseProduct(body, navigate, setCart)
     }
 
     return (
@@ -75,48 +66,33 @@ export const CartProduct = ({ cart, setCart }: INewPurchase) => {
                 {cart.length > 0 ? renderProductCart : <h3>Carrinho vazio!</h3>}
             </Styled.ContentMain>
 
+            {cart.length > 0 ? <Styled.ContentInput>
+                <Styled.TextH1>Passe a data de entrega.</Styled.TextH1>
+                <TextField
+                    name={"date"}
+                    value={form.date}
+                    onChange={onChange}
+                    variant="outlined"
+                    type={"date"}
+                    fullWidth
+                    required
+                    margin="normal"
+                />
+            </Styled.ContentInput> : null}
+
             <h3>
                 {cart.length > 0 ? `Preço total: R$ ${priceToPay.toFixed(2)},00` : null}
             </h3>
 
-            <Styled.ContentButtonPurchase>
-                {cart.length > 0 ?
-                    <Box sx={{ width: '60%' }}>
-                        <Collapse in={open}>
-                            <Alert
-                                action={
-                                    <IconButton
-                                        onClick={() => {
-                                            setOpen(false);
-                                        }}
-                                    />
-                                }
-                            >
-                                <Button
-                                    variant="contained"
-                                    color="primary"
-                                    onClick={FinalizePurchase}
-                                >
-                                    Finalizar compra
-                                </Button>
-                            </Alert>
-                        </Collapse>
-                        <Button
-                            disabled={open}
-                            variant="outlined"
-
-                            onClick={() => {
-                                setCart([])
-                                setOpen(true);
-                            }}
-                        >
-                            Limpar carrinho
-                        </Button>
-                        <ToastContainer />
-                    </Box>
-                    : null
-                }
-            </Styled.ContentButtonPurchase>
+            {cart.length > 0 ? <Styled.ContentButtonPurchase>
+                <Button
+                    color="primary"
+                    variant="contained"
+                    onClick={FinalizePurchase}
+                >
+                    Finalizar compra
+                </Button>
+            </Styled.ContentButtonPurchase> : null}
         </Styled.ContainerCartProduct>
     )
 }

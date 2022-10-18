@@ -1,7 +1,8 @@
 
 export interface User {
-    name: string | "";
-    date: Date | "" ;
+    name?: string | "";
+    password?: string | "";
+    date?: Date | "" ;
   }
 
   export interface IProduct {

@@ -9,14 +9,14 @@ import { CircularProgress } from "@mui/material";
 
 export const FormSignup: React.FC = () => {
     const navigate = useNavigate();
-    const { form, onChange, clean } = useForm({ name: "", date: "" });
+    const { form, onChange, clean } = useForm({ name: "", password: "" });
     const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
 
     const onSubmitForm = (event: React.ChangeEvent<HTMLInputElement> | any) => {
         event.preventDefault();
         setIsLoading(true)
-        registerClient({ userName: form.name, deliveryDate: form.date }, navigate, clean)
+        registerClient({ userName: form.name, password: form.password }, navigate, clean)
     };
 
 
@@ -36,10 +36,11 @@ export const FormSignup: React.FC = () => {
                 />
 
                 <TextField
-                    name={"date"}
-                    value={form.date}
+                    name={"password"}
+                    label={"senha"}
+                    value={form.password}
                     onChange={onChange}
-                    type={"date"}
+                    type={"password"}
                     required
                     fullWidth
                     margin="normal"
