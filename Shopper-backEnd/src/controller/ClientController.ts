@@ -13,7 +13,7 @@ export class ClientController {
         try {
             const sinupClient: IClientDTO = {
                 userName: req.body.userName,
-                deliveryDate: req.body.deliveryDate
+                password: req.body.password
             }
 
             const token = await this.clientBusiness.signup(sinupClient);
@@ -32,8 +32,9 @@ export class ClientController {
     async login(req: Request, res: Response): Promise<void> {
         try {
             const nameClient = req.body.userName as string
+            const password = req.body.password
 
-            const token = await this.clientBusiness.login(nameClient);
+            const token = await this.clientBusiness.login(nameClient, password);
 
             res.send({ message: `Boas compras ${nameClient}.`, token: token }).status(200);
 

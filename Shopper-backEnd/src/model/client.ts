@@ -2,17 +2,17 @@
 export interface IClient {
     id: string,
     userName: string,
-    deliveryDate: Date | string
+    password: string
 }
 
 export interface IClientDTO {
     userName: string,
-    deliveryDate: string
+    password: string
 }
 
 export interface IClientDB {
     id: string,
     user_name: string,
-    deliveryDate: Date | string
+    password: string
 }
 

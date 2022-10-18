@@ -28,7 +28,7 @@ export class ClientDatabase extends BaseDatabase implements IClientDatabaseRepos
                 .insert({
                     id: client.id,
                     user_name: client.userName,
-                    deliveryDate: client.deliveryDate
+                    password: client.password
                 }).into(ClientDatabase.TABLE_NAME)
 
         } catch (error: any) {

@@ -1,9 +1,10 @@
-import { ClientNotFound, CustomError, InvalidToken } from "../error/CustomError";
+import { ClientNotFound, CustomError, DateInvalid, InvalidToken } from "../error/CustomError";
 import { InewCart, IPurchase, IPurchaseDTO } from "../model/purchase";
 import { IAuthenticator, IIDGenerator } from "../ports/Ports";
 import { IProductRepository } from "../repository/productDatabaseRepository";
 import { IPurchaseDatabase } from "../repository/purchaseDatabaseRepository";
-
+import moment from 'moment';
+import { ValidateDate } from "../services/CheckDate";
 
 
 export class PurchaseBusiness {
@@ -16,13 +17,13 @@ export class PurchaseBusiness {
 
     async addPurchase(purchase: IPurchaseDTO, token: string) {
         try {
-            const { cart_items, total_price } = purchase
+            const { cart_items, total_price, deliveryDate } = purchase
 
             if (!token) {
                 throw new InvalidToken()
             }
 
-            if (!cart_items || !total_price) {
+            if (!cart_items || !total_price || !deliveryDate) {
                 throw new CustomError("inválido registro de compra.", 402)
             }
 
@@ -33,6 +34,18 @@ export class PurchaseBusiness {
             if (!idClient) {
                 throw new ClientNotFound()
             }
+
+            const newformDate = moment(deliveryDate, "YYYY-MM-DD").format(
+                "DD-MM-YYYY"
+            );
+
+            const invalidDate = ValidateDate(newformDate)
+
+            if (!invalidDate) {
+                throw new DateInvalid();
+            }
+
+            const dataValida = moment(newformDate, "DD-MM-YYYY").format("YYYY-MM-DD")
 
             const id = this.idGenerator.generate();
 
@@ -53,7 +66,8 @@ export class PurchaseBusiness {
                 id: id,
                 id_client: idClient,
                 cart_items: cart,
-                total_price: total_price
+                total_price: total_price,
+                deliveryDate: dataValida
             }
 
             await this.purcahseDatabase.AddPurchase(insertPurchase)
