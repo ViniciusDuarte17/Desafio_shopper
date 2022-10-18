@@ -14,7 +14,8 @@ export class PurchaseController {
             const token = req.headers.authorization as string;
             const purchase: IPurchaseDTO = {
                 cart_items: req.body.cartItems,
-                total_price: req.body.price
+                total_price: req.body.price,
+                deliveryDate: req.body.deliveryDate
             }
 
             await this.purchaseBusiness.addPurchase(purchase, token)

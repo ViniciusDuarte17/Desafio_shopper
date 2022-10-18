@@ -1,5 +1,5 @@
-GET https://shopper-connection.herokuapp.com/product
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM5ZDA0MmM1LWVhZTktNDQ3YS05MGE3LTE1ZmU3YTIyM2VhZiIsImlhdCI6MTY2NTU4MDgyNCwiZXhwIjoxNjY1NTk4ODI0fQ.Jn8LbRWYZvy0wTMT3bZXSvxHPY0zxMPlHgE-NjB0TN0
+GET http://localhost:3003/product
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJhMzY5ZTE5LTY1ZjUtNGE1MC1hM2RiLTc1ZTA4NDFkNjZlOCIsImlhdCI6MTY2NjExMTMyOSwiZXhwIjoxNjY2MTI5MzI5fQ.NOMzeYqkaocTjOhmJSkmcMR6oYnhMIf2I2X-Tw4HQT0
 
 
 ###
@@ -8,26 +8,28 @@ Content-Type: application/json
 
 {
     "userName": "benjamin rocha test",
-    "deliveryDate": "2023-10-14" 
+    "password": "ben2110" 
 }
 
 ###
 
 
-POST https://shopper-connection.herokuapp.com/user/login
+POST http://localhost:3003/user/login
 Content-Type: application/json 
 
 {
-    "userName": "vinicius"
+     "userName": "benjamin rocha test",
+     "password": "ben2110" 
 }
 
 ###
 
-POST https://shopper-connection.herokuapp.com/purchase
+POST http://localhost:3003/purchase
 Content-Type: application/json 
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjhiNzEwOTFjLTQyYmQtNGExYi1hZGQyLWY2YjAwODI3MDBmNSIsImlhdCI6MTY2NTg1OTUwNSwiZXhwIjoxNjY1ODc3NTA1fQ.FgIZxDHUgbTwowdZ7Fqv1lu7U-V6bIJbUmdV9BTgjSU
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJhMzY5ZTE5LTY1ZjUtNGE1MC1hM2RiLTc1ZTA4NDFkNjZlOCIsImlhdCI6MTY2NjExNDc0MywiZXhwIjoxNjY2MTMyNzQzfQ.3HCKziFjLNnwVCgBvPw8atvAJ7FwP9hemP_zCF039HA
 
 {
 "cartItems": [{ "id": 16, "name": "AZEITE  PORTUGUÊS EXTRA VIRGEM GALLO 500ML", "price": 20.49, "qty_stock": 156, "amout": 1 }, { "id": 18, "name": "BEBIDA ENERGÉTICA VIBE 2L", "price": 8.99, "qty_stock": 658, "amout": 2 }],
-    "price": 100
+    "price": 100,
+    "deliveryDate": "2022-10-18"
 }
