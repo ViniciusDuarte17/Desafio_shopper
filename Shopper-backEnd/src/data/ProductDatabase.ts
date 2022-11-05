@@ -19,7 +19,6 @@ export class ProductDatabase extends BaseDatabase implements IProductRepository 
         }
     }
 
-
     async updateStockProduct(id: number, newValueStock: number): Promise<void> {
         try {
             await this.getConnection()

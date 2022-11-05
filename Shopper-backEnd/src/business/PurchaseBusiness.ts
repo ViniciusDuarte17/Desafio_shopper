@@ -53,9 +53,13 @@ export class PurchaseBusiness {
 
             const newCartJson: InewCart[] = JSON.parse(cart);
 
+            const productAll = await this.productDatabase.getProduct()
+
             newCartJson.forEach((product: InewCart) => {
 
-                if (product.amout > product.qty_stock) {
+                const productFilter = productAll?.filter(productDb => productDb.id === product.id)
+
+                if (productFilter?.find(productDb => product.amout > productDb.qty_stock)) {
                     throw new CustomError("A quantidade solicitada não esteja disponível no estoque.", 422)
                 }
 

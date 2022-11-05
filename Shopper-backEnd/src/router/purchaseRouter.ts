@@ -16,4 +16,5 @@ const authenticator = new Authenticator()
 const purchaseBusiness = new PurchaseBusiness(purchaseDatabase, idGenerator, authenticator, productDatabase)
 const purchaseController = new PurchaseController(purchaseBusiness)
 
+
 purchasetRouter.post("/", (res, req) => purchaseController.insertPurchase(res, req));
