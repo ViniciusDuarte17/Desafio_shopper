@@ -16,7 +16,7 @@ export const ProductToPurchase = ({ product, removeProductToCart }: Props) => {
             <Styled.Content>
                 <p>{product.name}</p>
                 <p> <strong>Quantidade: </strong> {product.amout}</p>
-                <h6> <strong>Preço: </strong> R$ {product.price},00</h6>
+                <h6> <strong>Preço: </strong> R$ {product.price.toString().replace('.', ',')}</h6>
                 <Styled.DivButton>
                     <Button
                         variant="contained"

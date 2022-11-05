@@ -81,7 +81,7 @@ export const CartProduct = ({ cart, setCart }: INewPurchase) => {
             </Styled.ContentInput> : null}
 
             <h3>
-                {cart.length > 0 ? `Preço total: R$ ${priceToPay.toFixed(2)},00` : null}
+                {cart.length > 0 ? `Preço total: R$ ${priceToPay.toFixed(2).toString().replace('.', ',')}` : null}
             </h3>
 
             {cart.length > 0 ? <Styled.ContentButtonPurchase>
