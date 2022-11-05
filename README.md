@@ -10,8 +10,8 @@ estoque. Por fim ao voltar a tela de produtos perceberá que o estoque foi atual
 
 <h3> 👤 Login/Cadastro</h3>
 
-* Caso já possua conta, o usuário consegue fazer login;
-* O usuário é capaz de criar uma conta, passando o nome e uma data de entrega da compra.
+* Para fazer login precisa passar o nome e a senha do usuário já cadastrado;
+* Para o usuário fazer cadastro na aplicação precisa passar informar o nome e uma senha.
 * Caso insira alguma informação incorreta ou deixe de inserir alguma informação obrigatória, é mostrada uma mensagem de erro clara.
 
 <h3>🗒️ Produtos</h3>
