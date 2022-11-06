@@ -5,6 +5,7 @@ import { IProductRepository } from "../repository/productDatabaseRepository";
 import { IPurchaseDatabase } from "../repository/purchaseDatabaseRepository";
 import moment from 'moment';
 import { ValidateDate } from "../services/CheckDate";
+import { IProductDb } from "../model/product";
 
 
 export class PurchaseBusiness {
@@ -63,7 +64,9 @@ export class PurchaseBusiness {
                     throw new CustomError("A quantidade solicitada não esteja disponível no estoque.", 422)
                 }
 
-                this.productDatabase.updateStockProduct(product.id, (product.qty_stock - product.amout))
+                productFilter?.forEach((productDb: IProductDb) => {
+                    this.productDatabase.updateStockProduct(product.id, (productDb.qty_stock - product.amout))
+                })
             })
 
             const insertPurchase: IPurchase = {
