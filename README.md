@@ -2,7 +2,7 @@
 
 ### Sobre o projeto:
 
-Foi implementado um sistema de formulário de cadastro de pedidos. O usuário para ter acesso a plataforma precisa preencher o formulário com informações de nome e uma data válida, caso o usuário já esteja logado basta preencher com o seu nome na tela de login. Ao terminar esse processo de cadastramento o usuário será redirecionado para listas de produtos que estão disponíveis. O usuário pode adicionar uma lista de produtos com quantos items ele queira comprar. Na página de carrinho tera os produtos que o usuário inseriu, podendo finalizar a compra ou remover o item que ele não queira. Todas essas informações estão salvo no banco de dados. Cada compra confirmada debita a quantidade do produto correspondente do estoque.O sistema alertar o usuário caso a quantidade solicitada não esteja disponível no
+Foi implementado um sistema de formulário de cadastro de pedidos. O usuário para ter acesso a plataforma precisa preencher o formulário com informações de nome e uma senha, caso o usuário já esteja logado basta preencher com o seu nome e senha cadastrada na tela de login. Ao terminar esse processo de cadastramento o usuário será redirecionado para listas de produtos que estão disponíveis. O usuário pode adicionar uma lista de produtos com quantos items ele queira comprar. Na página de carrinho tera os produtos que o usuário inseriu, podendo finalizar a compra ou remover o item que ele não queira. Todas essas informações estão salvo no banco de dados. Cada compra confirmada debita a quantidade do produto correspondente do estoque.O sistema alerta o usuário caso a quantidade solicitada não esteja disponível no
 estoque. Por fim ao voltar a tela de produtos perceberá que o estoque foi atualizado.
 
 
