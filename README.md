@@ -59,11 +59,40 @@ Ferramentas usadas na construção do projeto:
 * Arquitetura em camadas
 
 
+ ### Instruções para rodar aplicação localmente
+ 
+ Clone o projeto
+
+```bash
+git clone https://github.com/ViniciusDuarte17/API_PENSADOR.git
+```
+Instale as dependências
+
+```bash
+npm install
+```
+
+```bash
+Criar o arquivo .env no back-end
+```
+
+Criar migrations
+
+```
+npm run migrations
+```
+Inicie o servidor
+
+```
+npm run dev 
+```
+
+
  ### LINKS:
  
  * [Shopper front-end](https://dynamic-treacle-61ca72.netlify.app/)
 
-* [Documentação do post](https://documenter.getpostman.com/view/19713876/2s83zpL1WR)
+ * [Documentação do post](https://documenter.getpostman.com/view/19713876/2s83zpL1WR)
 
 ```
 BASE_URL DO BACK-END: https://shopper-connection.herokuapp.com
