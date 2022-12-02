@@ -64,7 +64,7 @@ Ferramentas usadas na construção do projeto:
  Clone o projeto
 
 ```bash
-git clone https://github.com/ViniciusDuarte17/API_PENSADOR.git
+git clone https://github.com/ViniciusDuarte17/Desafio_shopper.git
 ```
 Instale as dependências
 
