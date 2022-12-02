@@ -76,11 +76,6 @@ npm install
 Criar o arquivo .env no back-end
 ```
 
-Criar migrations
-
-```
-npm run migrations
-```
 Inicie o servidor
 
 ```
