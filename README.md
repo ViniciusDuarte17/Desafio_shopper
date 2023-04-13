@@ -93,4 +93,11 @@ npm run dev
 BASE_URL DO BACK-END: https://shopper-connection.herokuapp.com
 ```
 
-- [@ViniciusDuarte17](https://github.com/ViniciusDuarte17)
+<h2 id="desenvolvedor">👷🏻‍♂ Desenvolvedor</h2>
+<table> 
+<tr>
+  <td align="center"><a href="https://github.com/ViniciusDuarte17"><img style="border-radius: 50%" src="https://user-images.githubusercontent.com/92999708/210431021-9923435c-eefe-4757-b8e2-e441910a4e88.png" width="100px" alt=""/>
+ <br />
+ <sub><b>Vinicius Duarte</b></sub></a> <a href="https://github.com/ViniciusDuarte17">👩🏻‍💻</a></td>
+ </tr>
+</table>
